@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Neveria
+namespace Neveria.Forms
 {
-    public partial class Form1 : Form
+    public partial class Frm_Receta : Form
     {
-        public Form1()
+        public Frm_Receta()
         {
             InitializeComponent();
         }
