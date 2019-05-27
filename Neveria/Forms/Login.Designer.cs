@@ -72,6 +72,7 @@
             // 
             // txtcontra
             // 
+            this.txtcontra.Enabled = false;
             this.txtcontra.Location = new System.Drawing.Point(67, 174);
             this.txtcontra.Name = "txtcontra";
             this.txtcontra.PasswordChar = '*';

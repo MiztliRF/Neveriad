@@ -63,6 +63,16 @@ namespace Neveria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _15380288_1705683126414825_1137212721961154881_n {
+            get {
+                object obj = ResourceManager.GetObject("15380288_1705683126414825_1137212721961154881_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap business_inventory_maintenance_product_box_boxes_2326 {
             get {
                 object obj = ResourceManager.GetObject("business_inventory_maintenance_product_box_boxes_2326", resourceCulture);

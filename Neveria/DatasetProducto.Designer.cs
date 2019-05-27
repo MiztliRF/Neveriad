@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Neveria.Dataset {
+namespace Neveria {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace Neveria.Dataset {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("proveedoresdataset")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DatasetProducto")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class proveedoresdataset : global::System.Data.DataSet {
+    public partial class DatasetProducto : global::System.Data.DataSet {
         
-        private MunicipioDataTable tableMunicipio;
+        private SP_ProductoDataTable tableSP_Producto;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public proveedoresdataset() {
+        public DatasetProducto() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Neveria.Dataset {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected proveedoresdataset(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DatasetProducto(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Neveria.Dataset {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Municipio"] != null)) {
-                    base.Tables.Add(new MunicipioDataTable(ds.Tables["Municipio"]));
+                if ((ds.Tables["SP_Producto"] != null)) {
+                    base.Tables.Add(new SP_ProductoDataTable(ds.Tables["SP_Producto"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Neveria.Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MunicipioDataTable Municipio {
+        public SP_ProductoDataTable SP_Producto {
             get {
-                return this.tableMunicipio;
+                return this.tableSP_Producto;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Neveria.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            proveedoresdataset cln = ((proveedoresdataset)(base.Clone()));
+            DatasetProducto cln = ((DatasetProducto)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Neveria.Dataset {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Municipio"] != null)) {
-                    base.Tables.Add(new MunicipioDataTable(ds.Tables["Municipio"]));
+                if ((ds.Tables["SP_Producto"] != null)) {
+                    base.Tables.Add(new SP_ProductoDataTable(ds.Tables["SP_Producto"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Neveria.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableMunicipio = ((MunicipioDataTable)(base.Tables["Municipio"]));
+            this.tableSP_Producto = ((SP_ProductoDataTable)(base.Tables["SP_Producto"]));
             if ((initTable == true)) {
-                if ((this.tableMunicipio != null)) {
-                    this.tableMunicipio.InitVars();
+                if ((this.tableSP_Producto != null)) {
+                    this.tableSP_Producto.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Neveria.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "proveedoresdataset";
+            this.DataSetName = "DatasetProducto";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/proveedoresdataset.xsd";
+            this.Namespace = "http://tempuri.org/DatasetProducto.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableMunicipio = new MunicipioDataTable();
-            base.Tables.Add(this.tableMunicipio);
+            this.tableSP_Producto = new SP_ProductoDataTable();
+            base.Tables.Add(this.tableSP_Producto);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeMunicipio() {
+        private bool ShouldSerializeSP_Producto() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Neveria.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            proveedoresdataset ds = new proveedoresdataset();
+            DatasetProducto ds = new DatasetProducto();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,27 @@ namespace Neveria.Dataset {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void MunicipioRowChangeEventHandler(object sender, MunicipioRowChangeEvent e);
+        public delegate void SP_ProductoRowChangeEventHandler(object sender, SP_ProductoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MunicipioDataTable : global::System.Data.TypedTableBase<MunicipioRow> {
+        public partial class SP_ProductoDataTable : global::System.Data.TypedTableBase<SP_ProductoRow> {
             
             private global::System.Data.DataColumn columnID;
             
             private global::System.Data.DataColumn columnNombre;
             
+            private global::System.Data.DataColumn columnPrecio;
+            
+            private global::System.Data.DataColumn columnFolio_Ventadetalle;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MunicipioDataTable() {
-                this.TableName = "Municipio";
+            public SP_ProductoDataTable() {
+                this.TableName = "SP_Producto";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +298,7 @@ namespace Neveria.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal MunicipioDataTable(global::System.Data.DataTable table) {
+            internal SP_ProductoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,7 +315,7 @@ namespace Neveria.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected MunicipioDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SP_ProductoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -334,6 +338,22 @@ namespace Neveria.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PrecioColumn {
+                get {
+                    return this.columnPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Folio_VentadetalleColumn {
+                get {
+                    return this.columnFolio_Ventadetalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -343,53 +363,55 @@ namespace Neveria.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MunicipioRow this[int index] {
+            public SP_ProductoRow this[int index] {
                 get {
-                    return ((MunicipioRow)(this.Rows[index]));
+                    return ((SP_ProductoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MunicipioRowChangeEventHandler MunicipioRowChanging;
+            public event SP_ProductoRowChangeEventHandler SP_ProductoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MunicipioRowChangeEventHandler MunicipioRowChanged;
+            public event SP_ProductoRowChangeEventHandler SP_ProductoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MunicipioRowChangeEventHandler MunicipioRowDeleting;
+            public event SP_ProductoRowChangeEventHandler SP_ProductoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event MunicipioRowChangeEventHandler MunicipioRowDeleted;
+            public event SP_ProductoRowChangeEventHandler SP_ProductoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddMunicipioRow(MunicipioRow row) {
+            public void AddSP_ProductoRow(SP_ProductoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MunicipioRow AddMunicipioRow(int ID, string Nombre) {
-                MunicipioRow rowMunicipioRow = ((MunicipioRow)(this.NewRow()));
+            public SP_ProductoRow AddSP_ProductoRow(int ID, string Nombre, int Precio, int Folio_Ventadetalle) {
+                SP_ProductoRow rowSP_ProductoRow = ((SP_ProductoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
-                        Nombre};
-                rowMunicipioRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMunicipioRow);
-                return rowMunicipioRow;
+                        Nombre,
+                        Precio,
+                        Folio_Ventadetalle};
+                rowSP_ProductoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_ProductoRow);
+                return rowSP_ProductoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MunicipioRow FindByID(int ID) {
-                return ((MunicipioRow)(this.Rows.Find(new object[] {
+            public SP_ProductoRow FindByID(int ID) {
+                return ((SP_ProductoRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                MunicipioDataTable cln = ((MunicipioDataTable)(base.Clone()));
+                SP_ProductoDataTable cln = ((SP_ProductoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,7 +419,7 @@ namespace Neveria.Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new MunicipioDataTable();
+                return new SP_ProductoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -405,6 +427,8 @@ namespace Neveria.Dataset {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnNombre = base.Columns["Nombre"];
+                this.columnPrecio = base.Columns["Precio"];
+                this.columnFolio_Ventadetalle = base.Columns["Folio_Ventadetalle"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,38 +438,43 @@ namespace Neveria.Dataset {
                 base.Columns.Add(this.columnID);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
+                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecio);
+                this.columnFolio_Ventadetalle = new global::System.Data.DataColumn("Folio_Ventadetalle", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFolio_Ventadetalle);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 50;
+                this.columnPrecio.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MunicipioRow NewMunicipioRow() {
-                return ((MunicipioRow)(this.NewRow()));
+            public SP_ProductoRow NewSP_ProductoRow() {
+                return ((SP_ProductoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MunicipioRow(builder);
+                return new SP_ProductoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(MunicipioRow);
+                return typeof(SP_ProductoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.MunicipioRowChanged != null)) {
-                    this.MunicipioRowChanged(this, new MunicipioRowChangeEvent(((MunicipioRow)(e.Row)), e.Action));
+                if ((this.SP_ProductoRowChanged != null)) {
+                    this.SP_ProductoRowChanged(this, new SP_ProductoRowChangeEvent(((SP_ProductoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -453,8 +482,8 @@ namespace Neveria.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.MunicipioRowChanging != null)) {
-                    this.MunicipioRowChanging(this, new MunicipioRowChangeEvent(((MunicipioRow)(e.Row)), e.Action));
+                if ((this.SP_ProductoRowChanging != null)) {
+                    this.SP_ProductoRowChanging(this, new SP_ProductoRowChangeEvent(((SP_ProductoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -462,8 +491,8 @@ namespace Neveria.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.MunicipioRowDeleted != null)) {
-                    this.MunicipioRowDeleted(this, new MunicipioRowChangeEvent(((MunicipioRow)(e.Row)), e.Action));
+                if ((this.SP_ProductoRowDeleted != null)) {
+                    this.SP_ProductoRowDeleted(this, new SP_ProductoRowChangeEvent(((SP_ProductoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -471,14 +500,14 @@ namespace Neveria.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.MunicipioRowDeleting != null)) {
-                    this.MunicipioRowDeleting(this, new MunicipioRowChangeEvent(((MunicipioRow)(e.Row)), e.Action));
+                if ((this.SP_ProductoRowDeleting != null)) {
+                    this.SP_ProductoRowDeleting(this, new SP_ProductoRowChangeEvent(((SP_ProductoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveMunicipioRow(MunicipioRow row) {
+            public void RemoveSP_ProductoRow(SP_ProductoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -487,7 +516,7 @@ namespace Neveria.Dataset {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                proveedoresdataset ds = new proveedoresdataset();
+                DatasetProducto ds = new DatasetProducto();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -505,7 +534,7 @@ namespace Neveria.Dataset {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MunicipioDataTable";
+                attribute2.FixedValue = "SP_ProductoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -549,25 +578,25 @@ namespace Neveria.Dataset {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class MunicipioRow : global::System.Data.DataRow {
+        public partial class SP_ProductoRow : global::System.Data.DataRow {
             
-            private MunicipioDataTable tableMunicipio;
+            private SP_ProductoDataTable tableSP_Producto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal MunicipioRow(global::System.Data.DataRowBuilder rb) : 
+            internal SP_ProductoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMunicipio = ((MunicipioDataTable)(this.Table));
+                this.tableSP_Producto = ((SP_ProductoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tableMunicipio.IDColumn]));
+                    return ((int)(this[this.tableSP_Producto.IDColumn]));
                 }
                 set {
-                    this[this.tableMunicipio.IDColumn] = value;
+                    this[this.tableSP_Producto.IDColumn] = value;
                 }
             }
             
@@ -575,11 +604,50 @@ namespace Neveria.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Nombre {
                 get {
-                    return ((string)(this[this.tableMunicipio.NombreColumn]));
+                    return ((string)(this[this.tableSP_Producto.NombreColumn]));
                 }
                 set {
-                    this[this.tableMunicipio.NombreColumn] = value;
+                    this[this.tableSP_Producto.NombreColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Precio {
+                get {
+                    return ((int)(this[this.tableSP_Producto.PrecioColumn]));
+                }
+                set {
+                    this[this.tableSP_Producto.PrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Folio_Ventadetalle {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Producto.Folio_VentadetalleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Folio_Ventadetalle\' de la tabla \'SP_Producto\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Producto.Folio_VentadetalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFolio_VentadetalleNull() {
+                return this.IsNull(this.tableSP_Producto.Folio_VentadetalleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFolio_VentadetalleNull() {
+                this[this.tableSP_Producto.Folio_VentadetalleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -587,22 +655,22 @@ namespace Neveria.Dataset {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class MunicipioRowChangeEvent : global::System.EventArgs {
+        public class SP_ProductoRowChangeEvent : global::System.EventArgs {
             
-            private MunicipioRow eventRow;
+            private SP_ProductoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MunicipioRowChangeEvent(MunicipioRow row, global::System.Data.DataRowAction action) {
+            public SP_ProductoRowChangeEvent(SP_ProductoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MunicipioRow Row {
+            public SP_ProductoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -618,7 +686,7 @@ namespace Neveria.Dataset {
         }
     }
 }
-namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
+namespace Neveria.DatasetProductoTableAdapters {
     
     
     /// <summary>
@@ -630,7 +698,7 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class MunicipioTableAdapter : global::System.ComponentModel.Component {
+    public partial class SP_ProductoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -644,7 +712,7 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public MunicipioTableAdapter() {
+        public SP_ProductoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -741,34 +809,12 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Municipio";
+            tableMapping.DataSetTable = "SP_Producto";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
+            tableMapping.ColumnMappings.Add("Precio", "Precio");
+            tableMapping.ColumnMappings.Add("Folio_Ventadetalle", "Folio_Ventadetalle");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Municipio] WHERE (([ID] = @Original_ID) AND ([Nombre] = @Original_No" +
-                "mbre))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Municipio] ([ID], [Nombre]) VALUES (@ID, @Nombre);\r\nSELECT ID, Nombr" +
-                "e FROM Municipio WHERE (ID = @ID)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Municipio] SET [ID] = @ID, [Nombre] = @Nombre WHERE (([ID] = @Original_ID" +
-                ") AND ([Nombre] = @Original_Nombre));\r\nSELECT ID, Nombre FROM Municipio WHERE (I" +
-                "D = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -784,22 +830,51 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Nombre\r\nFROM     Municipio\r\nWHERE  (Nombre LIKE \'%\' + @Nombre + \'%\')";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = "dbo.SP_Producto";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP", global::System.Data.SqlDbType.TinyInt, 1, global::System.Data.ParameterDirection.Input, 3, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Folio_ventad", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(proveedoresdataset.MunicipioDataTable dataTable, string Nombre) {
+        public virtual int Fill(DatasetProducto.SP_ProductoDataTable dataTable, global::System.Nullable<byte> OP, global::System.Nullable<int> ID, string Nombre, global::System.Nullable<int> Precio, global::System.Nullable<int> Folio_ventad) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((Nombre == null)) {
-                throw new global::System.ArgumentNullException("Nombre");
+            if ((OP.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((byte)(OP.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Nombre));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Nombre == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(Nombre));
+            }
+            if ((Precio.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(Precio.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Folio_ventad.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(Folio_ventad.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -812,145 +887,41 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual proveedoresdataset.MunicipioDataTable GetData(string Nombre) {
+        public virtual DatasetProducto.SP_ProductoDataTable GetData(global::System.Nullable<byte> OP, global::System.Nullable<int> ID, string Nombre, global::System.Nullable<int> Precio, global::System.Nullable<int> Folio_ventad) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((Nombre == null)) {
-                throw new global::System.ArgumentNullException("Nombre");
+            if ((OP.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((byte)(OP.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Nombre));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            proveedoresdataset.MunicipioDataTable dataTable = new proveedoresdataset.MunicipioDataTable();
+            if ((ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Nombre == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(Nombre));
+            }
+            if ((Precio.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(Precio.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Folio_ventad.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(Folio_ventad.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            DatasetProducto.SP_ProductoDataTable dataTable = new DatasetProducto.SP_ProductoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(proveedoresdataset.MunicipioDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(proveedoresdataset dataSet) {
-            return this.Adapter.Update(dataSet, "Municipio");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Nombre) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_Nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_Nombre");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nombre));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string Nombre) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
-            if ((Nombre == null)) {
-                throw new global::System.ArgumentNullException("Nombre");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nombre));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string Nombre, int Original_ID, string Original_Nombre) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
-            if ((Nombre == null)) {
-                throw new global::System.ArgumentNullException("Nombre");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nombre));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID));
-            if ((Original_Nombre == null)) {
-                throw new global::System.ArgumentNullException("Original_Nombre");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Nombre));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, int Original_ID, string Original_Nombre) {
-            return this.Update(Original_ID, Nombre, Original_ID, Original_Nombre);
         }
     }
     
@@ -966,8 +937,6 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private MunicipioTableAdapter _municipioTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -980,20 +949,6 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public MunicipioTableAdapter MunicipioTableAdapter {
-            get {
-                return this._municipioTableAdapter;
-            }
-            set {
-                this._municipioTableAdapter = value;
             }
         }
         
@@ -1016,10 +971,6 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._municipioTableAdapter != null) 
-                            && (this._municipioTableAdapter.Connection != null))) {
-                    return this._municipioTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1033,9 +984,6 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._municipioTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1045,17 +993,8 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(proveedoresdataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DatasetProducto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._municipioTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Municipio.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._municipioTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1064,16 +1003,8 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(proveedoresdataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DatasetProducto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._municipioTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Municipio.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._municipioTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1082,16 +1013,8 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(proveedoresdataset dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DatasetProducto dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._municipioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Municipio.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._municipioTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1124,17 +1047,12 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(proveedoresdataset dataSet) {
+        public virtual int UpdateAll(DatasetProducto dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._municipioTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._municipioTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
-                        "sma cadena de conexión.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1168,15 +1086,6 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._municipioTableAdapter != null)) {
-                    revertConnections.Add(this._municipioTableAdapter, this._municipioTableAdapter.Connection);
-                    this._municipioTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._municipioTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._municipioTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._municipioTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._municipioTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1234,10 +1143,6 @@ namespace Neveria.Dataset.proveedoresdatasetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._municipioTableAdapter != null)) {
-                    this._municipioTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._municipioTableAdapter]));
-                    this._municipioTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

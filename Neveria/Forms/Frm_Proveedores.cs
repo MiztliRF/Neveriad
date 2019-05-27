@@ -51,6 +51,7 @@ namespace Neveria.Forms
             conexion.Open();
             comando.ExecuteNonQuery();
             conexion.Close();
+            MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -65,6 +66,7 @@ namespace Neveria.Forms
             comando.ExecuteNonQuery();
             conexion.Close();
             CLEAR();
+            MessageBox.Show("Se a eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -146,6 +148,9 @@ namespace Neveria.Forms
                 txttelefono.Text = B.datasetprovedores.Proveedor[B.provedoresbindingsource.Position].TELEFONO.ToString();
                 txtrfc.Text = B.datasetprovedores.Proveedor[B.provedoresbindingsource.Position].RFC.ToString();
                 txtemail.Text = B.datasetprovedores.Proveedor[B.provedoresbindingsource.Position].CORREO.ToString();
+                colonia = B.datasetprovedores.Proveedor[B.provedoresbindingsource.Position].ID_Colonia.ToString();
+                localidad = B.datasetprovedores.Proveedor[B.provedoresbindingsource.Position].ID_LOCALIDAD.ToString();
+                municipio = B.datasetprovedores.Proveedor[B.provedoresbindingsource.Position].ID_MUNICIPIO.ToString();
             }
         }
 

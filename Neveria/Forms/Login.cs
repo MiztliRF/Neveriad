@@ -69,9 +69,12 @@ namespace Neveria.Forms
 
         private void txtusuario_KeyDown(object sender, KeyEventArgs e)
         {
+            
             if (e.KeyCode == Keys.Enter) 
             {
                 txtcontra.Focus();
+                txtcontra.Enabled = true;
+
             }
         }
 

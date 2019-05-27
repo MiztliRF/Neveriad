@@ -45,6 +45,9 @@ namespace Neveria.Forms
                 txttelefono.Text = B.clientedataset.Cliente[B.clientebindigsource.Position].TELEFONO.ToString();
                 txtrfc.Text = B.clientedataset.Cliente[B.clientebindigsource.Position].RFC.ToString();
                 txtemail.Text = B.clientedataset.Cliente[B.clientebindigsource.Position].CORREO.ToString();
+                colonia = B.clientedataset.Cliente[B.clientebindigsource.Position].ID_Colonia.ToString();
+                localidad = B.clientedataset.Cliente[B.clientebindigsource.Position].ID_LOCALIDAD.ToString();
+                municipio = B.clientedataset.Cliente[B.clientebindigsource.Position].ID_MUNICIPIO.ToString();
             }
     
         }
@@ -90,6 +93,7 @@ namespace Neveria.Forms
             conexion.Open();
             comando.ExecuteNonQuery();
             conexion.Close();
+            MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnlocalidad_Click(object sender, EventArgs e)
@@ -135,6 +139,8 @@ namespace Neveria.Forms
             conexion.Open();
             comando.ExecuteNonQuery();
             conexion.Close();
+            CLEAR();
+            MessageBox.Show("Se elimino correctamente ", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtfolio_KeyDown_1(object sender, KeyEventArgs e)
@@ -168,6 +174,24 @@ namespace Neveria.Forms
                 lector.Close();
                 conexion.Close();
             }
+
+        }
+
+        public void CLEAR()
+        {
+            txtpaterno.Clear();
+            txtmaterno.Clear();
+            txtnombre.Clear();
+            txtinterno.Clear();
+            txtnexterno.Clear();
+            txtlocalidad.Clear();
+            txtmunicipio.Clear();
+            txtcalle.Clear();
+            txtcolonia.Clear();
+            txtrfc.Clear();
+            txttelefono.Clear();
+            txtemail.Clear();
+            txtfolio.Focus();
 
         }
     }

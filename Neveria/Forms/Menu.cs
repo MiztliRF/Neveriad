@@ -108,6 +108,7 @@ namespace Neveria.Forms
         private void btnreceta_Click(object sender, EventArgs e)
         {
             submenucatalogo.Visible = false;
+            abrirformhija(new Frm_Producto());
         }
 
         private void btncatalogo_Click(object sender, EventArgs e)
@@ -138,6 +139,17 @@ namespace Neveria.Forms
         private void btnproduccion_Click(object sender, EventArgs e)
         {
             PANELSUBMENUDEMOVI.Visible = false;
+        }
+
+        private void btnreportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncompra_Click(object sender, EventArgs e)
+        {
+            submenucatalogo.Visible = false;
+            abrirformhija(new Frm_Compras());
         }
     }
 }

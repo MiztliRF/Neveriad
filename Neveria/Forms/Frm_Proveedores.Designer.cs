@@ -62,7 +62,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btncerrarhijo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.proveedoresBdatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coloniaTableAdapter = new Neveria.DataSetcoloniaTableAdapters.ColoniaTableAdapter();
             this.btncoloniab = new System.Windows.Forms.Button();
@@ -73,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetcolonia)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrarhijo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBdatasetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,7 +329,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(141)))), ((int)(((byte)(198)))));
             this.panel1.Controls.Add(this.btncerrarhijo);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -348,14 +345,6 @@
             this.btncerrarhijo.TabIndex = 1;
             this.btncerrarhijo.TabStop = false;
             this.btncerrarhijo.Click += new System.EventHandler(this.btncerrarhijo_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(-19, -19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // coloniaTableAdapter
             // 
@@ -450,7 +439,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetcolonia)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btncerrarhijo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBdatasetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -489,7 +477,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox btncerrarhijo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource proveedoresBdatasetBindingSource;
         private DataSetcolonia dataSetcolonia;
         private System.Windows.Forms.BindingSource coloniaBindingSource;
