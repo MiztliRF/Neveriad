@@ -63,7 +63,9 @@
             // txtusuario
             // 
             this.txtusuario.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtusuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtusuario.Location = new System.Drawing.Point(67, 65);
+            this.txtusuario.MaxLength = 15;
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(185, 22);
             this.txtusuario.TabIndex = 51;
@@ -72,8 +74,10 @@
             // 
             // txtcontra
             // 
+            this.txtcontra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcontra.Enabled = false;
             this.txtcontra.Location = new System.Drawing.Point(67, 174);
+            this.txtcontra.MaxLength = 15;
             this.txtcontra.Name = "txtcontra";
             this.txtcontra.PasswordChar = '*';
             this.txtcontra.Size = new System.Drawing.Size(185, 22);
@@ -96,9 +100,9 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(291, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(397, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(443, 227);
+            this.pictureBox1.Size = new System.Drawing.Size(465, 266);
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             // 
@@ -119,13 +123,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(760, 325);
+            this.ClientSize = new System.Drawing.Size(874, 346);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bttnlogin);
             this.Controls.Add(this.txtcontra);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Iniciar Sesion";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -14,7 +14,7 @@ namespace Neveria.Forms
 {
     public partial class Login : Form
     {
-        System.Data.SqlClient.SqlConnection conexion = new System.Data.SqlClient.SqlConnection(@"Data Source=LAPTOP-ED3OPSO6\MIZTLI;Initial Catalog=Neveria;Persist Security Info=True;User ID=sa;Password=geovanni12");
+        System.Data.SqlClient.SqlConnection conexion = new System.Data.SqlClient.SqlConnection(@"Data Source=LAPTOP-ED3OPSO6\MIZTLI;Initial Catalog=NEVERIAC;Persist Security Info=True;User ID=sa;Password=geovanni12");
         System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
         System.Data.SqlClient.SqlDataReader lector;
         public Login()
@@ -69,10 +69,12 @@ namespace Neveria.Forms
 
         private void txtusuario_KeyDown(object sender, KeyEventArgs e)
         {
-            
-            if (e.KeyCode == Keys.Enter) 
+
+            if (e.KeyCode == Keys.Enter)
             {
-                txtcontra.Focus();
+               
+ 
+                 txtcontra.Focus();
                 txtcontra.Enabled = true;
 
             }
@@ -82,33 +84,43 @@ namespace Neveria.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (string.IsNullOrEmpty(txtcontra.Text.Trim()) || string.IsNullOrEmpty(txtusuario.Text.Trim()))
+                conexion.Open();
+                System.Data.SqlClient.SqlCommand usuario = new SqlCommand("select   US_NOMBRE from Usuarios where US_NOMBRE='" + txtusuario.Text, conexion);
+                if (txtusuario.Text==usuario.ToString())
                 {
-                    MessageBox.Show("NO puede haber espacios en blancos");
+
+
+                    if (string.IsNullOrEmpty(txtcontra.Text.Trim()) || string.IsNullOrEmpty(txtusuario.Text.Trim()))
+                    {
+                        MessageBox.Show("NO puede haber espacios en blancos");
+                    }
+                    else
+                    {
+                        System.Data.SqlClient.SqlCommand comando = new SqlCommand("select   US_NOMBRE,US_CONTRASEÑA from Usuarios where US_NOMBRE='" + txtusuario.Text + "' and US_CONTRASEÑA='" + txtcontra.Text + "'", conexion);
+                        {
+                            lector = comando.ExecuteReader();
+
+                            if (lector.Read())
+                            {
+                                Menu frm = new Menu();
+                                this.Hide();
+                                frm.Show();
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Imposible conectarse");
+
+
+                            }
+                            lector.Close();
+                            conexion.Close();
+                        }
+                    }
                 }
                 else
                 {
-                    conexion.Open();
-                    System.Data.SqlClient.SqlCommand comando = new SqlCommand("select Usuario,Contraseña from Usuarios where Usuario='" + txtusuario.Text + "' and Contraseña='" + txtcontra.Text + "'", conexion);
-                    {
-                        lector = comando.ExecuteReader();
-
-                        if (lector.Read())
-                        {
-                            Menu frm = new Menu();
-                            this.Hide();
-                            frm.Show();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Imposible conectarse");
-
-
-                        }
-                        lector.Close();
-                        conexion.Close();
-                    }
+                    MessageBox.Show("NO Existe");
                 }
             }
 

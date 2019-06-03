@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Neveria.Forms
 {
-    public partial class frm_producto_B : Form
+    public partial class Frm_Resempledo : Form
     {
-        public frm_producto_B()
+        public Frm_Resempledo()
         {
             InitializeComponent();
-        }
-
-        private void frm_producto_B_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -90,25 +90,25 @@ namespace Neveria.Forms
         {
 
             submenucatalogo.Visible = false;
-            abrirformhija(new Frm_Proveedores());
+            //abrirformhija(new //Frm_Proveedores());
         }
 
         private void btnmp_Click(object sender, EventArgs e)
         {
             submenucatalogo.Visible = false;
-            abrirformhija(new Frm_MateriaP());
+           // abrirformhija(new //Frm_MateriaP());
         }
 
         private void btncliente_Click(object sender, EventArgs e)
         {
             submenucatalogo.Visible = false;
-            abrirformhija(new frm_Clientes());
+          //1  abrirformhija(new //frm_Clientes());
         }
 
         private void btnreceta_Click(object sender, EventArgs e)
         {
             submenucatalogo.Visible = false;
-            abrirformhija(new Frm_Producto());
+            //abrirformhija(new Frm_Producto());
         }
 
         private void btncatalogo_Click(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace Neveria.Forms
         private void btncompra_Click(object sender, EventArgs e)
         {
             submenucatalogo.Visible = false;
-            abrirformhija(new Frm_Compras());
+            //abrirformhija(new Frm_Compras());
         }
     }
 }
