@@ -44,16 +44,12 @@ namespace Neveria.Forms
 
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            btnmaximizar.Visible = false;
-            btnrestaurar.Visible = true;
+            
         }
 
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
+            
         }
 
         private void btnminimzar_Click(object sender, EventArgs e)
@@ -102,13 +98,13 @@ namespace Neveria.Forms
         private void btncliente_Click(object sender, EventArgs e)
         {
             submenucatalogo.Visible = false;
-          //1  abrirformhija(new //frm_Clientes());
+            abrirformhija(new Frm_Cliente());
         }
 
         private void btnreceta_Click(object sender, EventArgs e)
         {
             submenucatalogo.Visible = false;
-            //abrirformhija(new Frm_Producto());
+            abrirformhija(new frm_Producto());
         }
 
         private void btncatalogo_Click(object sender, EventArgs e)
@@ -118,6 +114,7 @@ namespace Neveria.Forms
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+         //   PanelAuditoria.Visible = true;
             submenucatalogo.Visible = false;
         }
 
@@ -134,6 +131,7 @@ namespace Neveria.Forms
         private void BTNVENTA_Click(object sender, EventArgs e)
         {
             PANELSUBMENUDEMOVI.Visible = false;
+            
         }
 
         private void btnproduccion_Click(object sender, EventArgs e)
@@ -150,6 +148,32 @@ namespace Neveria.Forms
         {
             submenucatalogo.Visible = false;
             //abrirformhija(new Frm_Compras());
+        }
+
+        private void panelindice_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnRusuario_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            subcataloauditoria.Visible = true;
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new frm_rusuarios());
+            
         }
     }
 }
