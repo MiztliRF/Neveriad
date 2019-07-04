@@ -176,6 +176,7 @@ namespace Neveria.Forms
 
                         MessageBox.Show("Bienvenido al sistema " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Clases.clusuario.persona = txtusuario.Text;
+                        Clases.clusuario.usuario = txtusuario.Text;
                         Clases.clauditoria.auditoria("Acceso al Sistema");
                         Menu frm = new Menu();
                             this.Hide();

@@ -21,6 +21,7 @@ namespace Neveria.Forms
         int Existe;
         string contraseñaN;
         
+        
         public frm_rusuarios()
         {
             InitializeComponent();
@@ -354,6 +355,8 @@ namespace Neveria.Forms
                         comando.ExecuteNonQuery();
                         conexion.Close();
                         MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clases.clusuario.persona = txtusuario.Text;
+                        Clases.clauditoria.auditoria("El "+Clases.clusuario.usuario+" Cambio la contraseña del  Usuario "+txtusuario.Text+" y el nivel"+cboxnivel.Text+"a el Nivel Administrador");
                         cleartotal();
                     }
                     if (result == DialogResult.No)
@@ -379,6 +382,8 @@ namespace Neveria.Forms
                         comando.ExecuteNonQuery();
                         conexion.Close();
                         MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clases.clusuario.persona = txtusuario.Text;
+                        Clases.clauditoria.auditoria("El " + Clases.clusuario.usuario + " Cambio la contraseña del  Usuario " + txtusuario.Text + " y el nivel" + cboxnivel.Text + "a el Nivel Operador");
                         cleartotal();
                     }
                     if (result == DialogResult.No)
@@ -416,6 +421,8 @@ namespace Neveria.Forms
                         comando.ExecuteNonQuery();
                         conexion.Close();
                         MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clases.clusuario.persona = txtusuario.Text;
+                        Clases.clauditoria.auditoria("El " + Clases.clusuario.usuario + " Agrego un nuevo  Usuario " + txtusuario.Text + " con el nivel" + cboxnivel.Text);
                         cleartotal();
                     }
                     if (result == DialogResult.No)
@@ -440,7 +447,10 @@ namespace Neveria.Forms
                         conexion.Open();
                         comando.ExecuteNonQuery();
                         conexion.Close();
+
                         MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clases.clusuario.persona = txtusuario.Text;
+                        Clases.clauditoria.auditoria("El " + Clases.clusuario.usuario + " Agrego un nuevo  Usuario " + txtusuario.Text + " con el nivel" + cboxnivel.Text);
                         cleartotal();
                     }
                     else
