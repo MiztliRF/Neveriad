@@ -39,6 +39,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnRusuario = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAuditoria = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -59,7 +60,6 @@
             this.btnmovimiento = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btncatalogo = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelcontenedor = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -68,10 +68,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.panelindice.SuspendLayout();
             this.subcataloauditoria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.PANELSUBMENUDEMOVI.SuspendLayout();
             this.submenucatalogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelcontenedor.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,7 @@
             this.paneltop.Name = "paneltop";
             this.paneltop.Size = new System.Drawing.Size(1040, 57);
             this.paneltop.TabIndex = 0;
+            this.paneltop.Paint += new System.Windows.Forms.PaintEventHandler(this.paneltop_Paint);
             this.paneltop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltop_MouseDown);
             // 
             // panel10
@@ -198,6 +199,17 @@
             this.panel9.Size = new System.Drawing.Size(14, 66);
             this.panel9.TabIndex = 17;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(274, 207);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnAuditoria
             // 
@@ -443,17 +455,6 @@
             this.btncatalogo.Click += new System.EventHandler(this.btncatalogo_Click);
             this.btncatalogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncatalogo_MouseDown);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 207);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelcontenedor
             // 
             this.panelcontenedor.Controls.Add(this.panel14);
@@ -510,10 +511,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.panelindice.ResumeLayout(false);
             this.subcataloauditoria.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.PANELSUBMENUDEMOVI.ResumeLayout(false);
             this.submenucatalogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelcontenedor.ResumeLayout(false);
             this.panelcontenedor.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

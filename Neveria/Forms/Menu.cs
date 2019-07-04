@@ -175,5 +175,10 @@ namespace Neveria.Forms
             abrirformhija(new frm_rusuarios());
             
         }
+
+        private void paneltop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

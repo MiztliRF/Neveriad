@@ -16,7 +16,7 @@ namespace Neveria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.frm_rusuarios());
+            Application.Run(new Forms.Login());
         }
     }
 }

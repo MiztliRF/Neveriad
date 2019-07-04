@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\clauditoria.cs" />
+    <Compile Include="Clases\Clconexion.cs" />
     <Compile Include="Clases\clusuario.cs" />
     <Compile Include="Dataset\proveedoresdataset.cs">
       <DependentUpon>proveedoresdataset.xsd</DependentUpon>

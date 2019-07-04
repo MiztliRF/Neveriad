@@ -19,7 +19,8 @@ namespace Neveria.Forms
         System.Data.SqlClient.SqlDataReader lector;
         string contraseña;
         int Existe;
-       
+        string contraseñaN;
+        
         public frm_rusuarios()
         {
             InitializeComponent();
@@ -87,22 +88,26 @@ namespace Neveria.Forms
 
                             }
                             contraseña = leer["US_CONTRASEÑA"].ToString();
-                            Clases.clusuario.nivel = leer["US_NIVEL"].ToString();
+                             Clases.clusuario.nivel = leer["US_NIVEL"].ToString();
+                            cboxnivel.Text = leer["US_NIVEL"].ToString();
                             if (Clases.clusuario.nivel == "1")
                             {
                                 Clases.clusuario.nivel = "Administrador";
+                                cboxnivel.Text = "Administrador";
 
                             }
                             if (Clases.clusuario.nivel == "2")
                             {
                                 Clases.clusuario.nivel = "Operador";
+                                cboxnivel.Text = "Operador";
                             }
                             conexion.Close();
                             txtcontraseña.Enabled = true;
                             txtcontraseña.Focus();
                             txtusuario.Enabled = false;
                             Existe = 1;
-
+                            btn_agregar.Enabled = false;
+                            btn_eliminar.Enabled = false;
                         }
                         else
                         {
@@ -271,14 +276,18 @@ namespace Neveria.Forms
                 
 
                 
-            }   
-            if (e.KeyCode==Keys.Escape)
+            }
+            if (e.KeyCode == Keys.Escape)
             {
                 txtusuario.Enabled = true;
                 txtusuario.Focus();
                 txtusuario.Clear();
                 txtcontraseña.Clear();
                 txtcontraseña.Enabled = false;
+                cboxnivel.SelectedIndex = -1;
+                btn_agregar.Enabled = false;
+                btn_eliminar.Enabled = false;
+
             }
 
             
@@ -321,38 +330,63 @@ namespace Neveria.Forms
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+
+            if (cbcamviarcontraseña.Checked==true)
+            {
+
             if (cboxnivel.Text=="Administrador")
             {
-                cboxnivel.Text = "1";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "SP_Usuarios";
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@OP", 2);
-                comando.Parameters.AddWithValue("@Nombre", txtusuario.Text);
-                comando.Parameters.AddWithValue("@Contraseña", txtcontraseña.Text);
-                comando.Parameters.AddWithValue("@Nivel", cboxnivel.Text);
-                comando.Connection = conexion;
-                conexion.Open();
-                comando.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   DialogResult result=MessageBox.Show("¿Seguro Usted esta Seguro de Hacer esta accion?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
 
+
+                        cboxnivel.Text = "1";
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.CommandText = "SP_Usuarios";
+                        comando.Parameters.Clear();
+                        comando.Parameters.AddWithValue("@OP", 2);
+                        comando.Parameters.AddWithValue("@Nombre", txtusuario.Text);
+                        comando.Parameters.AddWithValue("@Contraseña", txtNcontraseña.Text);
+                        comando.Parameters.AddWithValue("@Nivel", cboxnivel.Text);
+                        comando.Connection = conexion;
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        conexion.Close();
+                        MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cleartotal();
+                    }
+                    if (result == DialogResult.No)
+                    {
+                        txtVNcontraseña.Focus();
+                    }
             }
             if (cboxnivel.Text=="Operador")
             {
-                cboxnivel.Text = "2";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "SP_Usuarios";
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@OP", 2);
-                comando.Parameters.AddWithValue("@Nombre", txtusuario.Text);
-                comando.Parameters.AddWithValue("@Contraseña", txtcontraseña.Text);
-                comando.Parameters.AddWithValue("@Nivel", cboxnivel.Text);
-                comando.Connection = conexion;
-                conexion.Open();
-                comando.ExecuteNonQuery();
-                conexion.Close();
-                MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("¿Seguro Usted esta Seguro de Hacer esta accion?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        cboxnivel.Text = "2";
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.CommandText = "SP_Usuarios";
+                        comando.Parameters.Clear();
+                        comando.Parameters.AddWithValue("@OP", 2);
+                        comando.Parameters.AddWithValue("@Nombre", txtusuario.Text);
+                        comando.Parameters.AddWithValue("@Contraseña", txtNcontraseña.Text);
+                        comando.Parameters.AddWithValue("@Nivel", cboxnivel.Text);
+                        comando.Connection = conexion;
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        conexion.Close();
+                        MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cleartotal();
+                    }
+                    if (result == DialogResult.No)
+                    {
+                        txtVNcontraseña.Focus();
+
+
+                    }
             }
             else
             {
@@ -360,12 +394,73 @@ namespace Neveria.Forms
 
             }
 
-            
+        }
+            else
+            {
+
+                if (cboxnivel.Text == "Administrador")
+                {
+                    DialogResult result = MessageBox.Show("¿Seguro Usted esta Seguro de Hacer esta accion?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        cboxnivel.Text = "1";
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.CommandText = "SP_Usuarios";
+                        comando.Parameters.Clear();
+                        comando.Parameters.AddWithValue("@OP", 2);
+                        comando.Parameters.AddWithValue("@Nombre", txtusuario.Text);
+                        comando.Parameters.AddWithValue("@Contraseña", txtcontraseña.Text);
+                        comando.Parameters.AddWithValue("@Nivel", cboxnivel.Text);
+                        comando.Connection = conexion;
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        conexion.Close();
+                        MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cleartotal();
+                    }
+                    if (result == DialogResult.No)
+                    {
+                        cboxnivel.Focus();
+                    }
+                }
+                if (cboxnivel.Text == "Operador")
+                {
+                    DialogResult result = MessageBox.Show("¿Seguro Usted esta Seguro de Hacer esta accion?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        cboxnivel.Text = "2";
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.CommandText = "SP_Usuarios";
+                        comando.Parameters.Clear();
+                        comando.Parameters.AddWithValue("@OP", 2);
+                        comando.Parameters.AddWithValue("@Nombre", txtusuario.Text);
+                        comando.Parameters.AddWithValue("@Contraseña", txtcontraseña.Text);
+                        comando.Parameters.AddWithValue("@Nivel", cboxnivel.Text);
+                        comando.Connection = conexion;
+                        conexion.Open();
+                        comando.ExecuteNonQuery();
+                        conexion.Close();
+                        MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cleartotal();
+                    }
+                    else
+                    {
+                        cboxnivel.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error, No selecciono ningun Nivel para el nuevo usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
 
         }
 
         private void cboxnivel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btn_agregar.Enabled = true;
+            btn_eliminar.Enabled = true;
 
         }
 
@@ -377,6 +472,8 @@ namespace Neveria.Forms
                 lblVcontraseña.Visible = true;
                 txtNcontraseña.Visible = true;
                 txtVNcontraseña.Visible = true;
+                txtNcontraseña.Focus();
+                btn_agregar.Enabled = false;
 
             }
             else
@@ -385,12 +482,63 @@ namespace Neveria.Forms
                 lblVcontraseña.Visible = false;
                 txtNcontraseña.Visible = false;
                 txtVNcontraseña.Visible = false;
+                txtNcontraseña.Clear();
+                cboxnivel.Focus();
+                btn_agregar.Enabled = true;
             }
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNcontraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtVNcontraseña.Focus();
+                contraseñaN = txtNcontraseña.Text;
+            }
+        }
+
+        private void txtVNcontraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (contraseñaN.Trim() == txtVNcontraseña.Text.Trim())
+                {
+                    MessageBox.Show("Las Contraseñas Coiciden ", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conexion.Open();
+                    string query = "Update US_CONTRASEÑA,US_NIVEL from Usuarios where US_NOMBRE =@us_nombre";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.Clear();
+                    conexion.Close();
+                    btn_agregar.Enabled = true;
+                    btn_eliminar.Enabled = true;
+                    btn_agregar.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Las Contraseñas No Coinciden", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtVNcontraseña.Focus();
+                    txtVNcontraseña.Clear();
+                }
+            }
+        }
+
+        public void cleartotal()
+        {
+            txtusuario.Enabled = true;
+            txtusuario.Focus();
+            txtusuario.Clear();
+            txtcontraseña.Clear();
+            txtNcontraseña.Clear();
+            txtVNcontraseña.Clear();
+            txtVcontraseña.Clear();
+            cboxnivel.SelectedIndex = -1;
+            cbcamviarcontraseña.Checked = false;
+            cboxnivel.Enabled=false;
         }
     }
 }

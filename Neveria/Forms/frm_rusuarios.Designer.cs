@@ -186,9 +186,11 @@
             this.txtNcontraseña.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNcontraseña.Location = new System.Drawing.Point(156, 259);
             this.txtNcontraseña.Name = "txtNcontraseña";
+            this.txtNcontraseña.PasswordChar = '*';
             this.txtNcontraseña.Size = new System.Drawing.Size(170, 22);
             this.txtNcontraseña.TabIndex = 6;
             this.txtNcontraseña.Visible = false;
+            this.txtNcontraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNcontraseña_KeyDown);
             // 
             // lblNcontraseña
             // 
@@ -217,9 +219,11 @@
             this.txtVNcontraseña.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtVNcontraseña.Location = new System.Drawing.Point(156, 309);
             this.txtVNcontraseña.Name = "txtVNcontraseña";
+            this.txtVNcontraseña.PasswordChar = '*';
             this.txtVNcontraseña.Size = new System.Drawing.Size(170, 22);
             this.txtVNcontraseña.TabIndex = 7;
             this.txtVNcontraseña.Visible = false;
+            this.txtVNcontraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVNcontraseña_KeyDown);
             // 
             // btn_agregar
             // 

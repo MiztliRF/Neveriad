@@ -172,9 +172,15 @@ namespace Neveria.Forms
 
                         if (lector.Read())
                         {
-                            Menu frm = new Menu();
+
+
+                        MessageBox.Show("Bienvenido al sistema " + txtusuario.Text, "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clases.clusuario.persona = txtusuario.Text;
+                        Clases.clauditoria.auditoria("Acceso al Sistema");
+                        Menu frm = new Menu();
                             this.Hide();
                             frm.Show();
+                        
 
                         }
                         else
