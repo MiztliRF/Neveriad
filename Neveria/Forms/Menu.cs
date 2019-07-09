@@ -76,34 +76,28 @@ namespace Neveria.Forms
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void submenucatalogo_Paint(object sender, PaintEventArgs e)
-        {
-            
-
-        }
-
         private void btnproveedores_Click(object sender, EventArgs e)
         {
 
-            submenucatalogo.Visible = false;
+            //submenucatalogo.Visible = false;
             //abrirformhija(new //Frm_Proveedores());
         }
 
         private void btnmp_Click(object sender, EventArgs e)
         {
-            submenucatalogo.Visible = false;
+            //submenucatalogo.Visible = false;
            // abrirformhija(new //Frm_MateriaP());
         }
 
         private void btncliente_Click(object sender, EventArgs e)
         {
-            submenucatalogo.Visible = false;
+            //submenucatalogo.Visible = false;
             abrirformhija(new Frm_Cliente());
         }
 
         private void btnreceta_Click(object sender, EventArgs e)
         {
-            submenucatalogo.Visible = false;
+            //submenucatalogo.Visible = false;
             abrirformhija(new frm_Producto());
         }
 
@@ -115,28 +109,28 @@ namespace Neveria.Forms
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
          //   PanelAuditoria.Visible = true;
-            submenucatalogo.Visible = false;
+            //submenucatalogo.Visible = false;
         }
 
         private void btncatalogo_MouseDown(object sender, MouseEventArgs e)
         {
-            submenucatalogo.Visible = true;
+            //submenucatalogo.Visible = true;
         }
 
         private void btnmovimiento_Click(object sender, EventArgs e)
         {
-            PANELSUBMENUDEMOVI.Visible = true;
+            //PANELSUBMENUDEMOVI.Visible = true;
         }
 
         private void BTNVENTA_Click(object sender, EventArgs e)
         {
-            PANELSUBMENUDEMOVI.Visible = false;
+            //PANELSUBMENUDEMOVI.Visible = false;
             
         }
 
         private void btnproduccion_Click(object sender, EventArgs e)
         {
-            PANELSUBMENUDEMOVI.Visible = false;
+            //PANELSUBMENUDEMOVI.Visible = false;
         }
 
         private void btnreportes_Click(object sender, EventArgs e)
@@ -146,7 +140,7 @@ namespace Neveria.Forms
 
         private void btncompra_Click(object sender, EventArgs e)
         {
-            submenucatalogo.Visible = false;
+            //submenucatalogo.Visible = false;
             //abrirformhija(new Frm_Compras());
         }
 
@@ -162,7 +156,7 @@ namespace Neveria.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            subcataloauditoria.Visible = true;
+            //subcataloauditoria.Visible = true;
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)
@@ -179,6 +173,27 @@ namespace Neveria.Forms
         private void paneltop_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           abrirformhija(new frmIndiceCatalogos());
+           
+        }
+
+        private void panelhija_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new Frm_IndiceAuditoria());
         }
     }
 }

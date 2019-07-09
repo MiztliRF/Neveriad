@@ -24,6 +24,8 @@ namespace Neveria.Clases
             cmd.ExecuteNonQuery();
             cnn.Close();
             
+        
+        
         }
 
         

@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Clases\clauditoria.cs" />
     <Compile Include="Clases\Clconexion.cs" />
+    <Compile Include="Clases\clencripta.cs" />
     <Compile Include="Clases\clusuario.cs" />
     <Compile Include="Dataset\proveedoresdataset.cs">
       <DependentUpon>proveedoresdataset.xsd</DependentUpon>
@@ -62,6 +63,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>proveedoresdataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIndiceCatalogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIndiceCatalogos.Designer.cs">
+      <DependentUpon>frmIndiceCatalogos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRpAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRpAuditoria.Designer.cs">
+      <DependentUpon>FrmRpAuditoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_Cliente.cs">
       <SubType>Form</SubType>
@@ -80,6 +93,12 @@
     </Compile>
     <Compile Include="Forms\Frm_Colonia.Designer.cs">
       <DependentUpon>Frm_Colonia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_IndiceAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_IndiceAuditoria.Designer.cs">
+      <DependentUpon>Frm_IndiceAuditoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_Producto.cs">
       <SubType>Form</SubType>
@@ -123,6 +142,16 @@
     <Compile Include="Forms\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="NEVERIACUSUARIO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NEVERIACUSUARIO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NEVERIACUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NEVERIACUsuarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporte\Reporte Venta.cs">
@@ -149,14 +178,29 @@
       <DependentUpon>RptAuditoria.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reporte\RPT_Auditoria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_Auditoria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Forms\frmIndiceCatalogos.resx">
+      <DependentUpon>frmIndiceCatalogos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmreporte.resx">
       <DependentUpon>frmreporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRpAuditoria.resx">
+      <DependentUpon>FrmRpAuditoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Cliente.resx">
       <DependentUpon>Frm_Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Colonia.resx">
       <DependentUpon>Frm_Colonia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_IndiceAuditoria.resx">
+      <DependentUpon>Frm_IndiceAuditoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Producto.resx">
       <DependentUpon>frm_Producto.cs</DependentUpon>
@@ -202,6 +246,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptAuditoria.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\RPT_Auditoria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_Auditoria.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Dataset\proveedoresdataset.xsc">
       <DependentUpon>proveedoresdataset.xsd</DependentUpon>
     </None>
@@ -212,6 +260,28 @@
     </None>
     <None Include="Dataset\proveedoresdataset.xss">
       <DependentUpon>proveedoresdataset.xsd</DependentUpon>
+    </None>
+    <None Include="NEVERIACUSUARIO.xsc">
+      <DependentUpon>NEVERIACUSUARIO.xsd</DependentUpon>
+    </None>
+    <None Include="NEVERIACUSUARIO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NEVERIACUSUARIO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NEVERIACUSUARIO.xss">
+      <DependentUpon>NEVERIACUSUARIO.xsd</DependentUpon>
+    </None>
+    <None Include="NEVERIACUsuarios.xsc">
+      <DependentUpon>NEVERIACUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="NEVERIACUsuarios.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NEVERIACUsuarios.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NEVERIACUsuarios.xss">
+      <DependentUpon>NEVERIACUsuarios.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -33,5 +33,16 @@ namespace Neveria.Properties {
                 return ((string)(this["NeveriaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-ED3OPSO6\\MIZTLI;Initial Catalog=NEVERIAC;Persist Security Info" +
+            "=True;User ID=sa")]
+        public string NEVERIACconexion {
+            get {
+                return ((string)(this["NEVERIACconexion"]));
+            }
+        }
     }
 }
