@@ -21,20 +21,16 @@ namespace Neveria.Forms
         private void abrirformhija(object formhija)
         {
             if (this.panelcontenedor.Controls.Count > 0)
-            
+
                 this.panelcontenedor.Controls.RemoveAt(0);
-            
-             Form fh = formhija as Form;
-             fh.TopLevel = false;
-              fh.Dock = DockStyle.Fill;
-             this.panelcontenedor.Controls.Add(fh);
-              this.panelcontenedor.Tag = fh;
-              fh.Show();
-            
 
-        
+            Form fh = formhija as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelcontenedor.Controls.Add(fh);
+            this.panelcontenedor.Tag = fh;
+            fh.Show();
 
-            
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -80,25 +76,25 @@ namespace Neveria.Forms
         {
 
             //submenucatalogo.Visible = false;
-            //abrirformhija(new //Frm_Proveedores());
+            //abrirformhija(new Frm_Proveedores());
         }
 
         private void btnmp_Click(object sender, EventArgs e)
         {
             //submenucatalogo.Visible = false;
-           // abrirformhija(new //Frm_MateriaP());
+            //abrirformhija(new //Frm_MateriaP());
         }
 
         private void btncliente_Click(object sender, EventArgs e)
         {
-            //submenucatalogo.Visible = false;
+            ////submenucatalogo.Visible = false;
             abrirformhija(new Frm_Cliente());
         }
 
         private void btnreceta_Click(object sender, EventArgs e)
         {
             //submenucatalogo.Visible = false;
-            abrirformhija(new frm_Producto());
+            //abrirformhija(new frm_Producto());
         }
 
         private void btncatalogo_Click(object sender, EventArgs e)
@@ -166,7 +162,7 @@ namespace Neveria.Forms
 
         private void button5_Click(object sender, EventArgs e)
         {
-            abrirformhija(new frm_rusuarios());
+            //abrirformhija(new frm_rusuarios());
             
         }
 
@@ -177,7 +173,7 @@ namespace Neveria.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-           abrirformhija(new frmIndiceCatalogos());
+           //abrirformhija(new frmIndiceCatalogos());
            
         }
 
@@ -189,11 +185,54 @@ namespace Neveria.Forms
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+            //abrirformhija(new Frm_Resempledo());
+
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            abrirformhija(new Frm_IndiceAuditoria());
+            //abrirformhija(new Frm_IndiceAuditoria());
+        }
+
+        private void catalogoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new frm_rusuarios());
+
+            //Forms.Menu menu = new Menu();
+          
+            
+            
+        }
+
+        private void movimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new Frm_Cliente());
+        }
+
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new Frm_Venta());
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new frm_Producto());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new Frm_Venta());
         }
     }
 }

@@ -37,14 +37,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtidp = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.Txtexist = new System.Windows.Forms.TextBox();
+            this.cboxestatus = new System.Windows.Forms.ComboBox();
+            this.btnbuscar = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
+            this.Btneliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.SuspendLayout();
@@ -73,12 +73,13 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(734, 3);
+            this.btncerrar.Location = new System.Drawing.Point(610, 3);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(78, 33);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btncerrar.TabIndex = 2;
             this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // label1
             // 
@@ -124,85 +125,106 @@
             this.label6.Size = new System.Drawing.Size(59, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Estatus:";
+            this.label6.Visible = false;
             // 
-            // textBox1
+            // txtidp
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(88, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtidp.Location = new System.Drawing.Point(139, 63);
+            this.txtidp.Name = "txtidp";
+            this.txtidp.Size = new System.Drawing.Size(88, 22);
+            this.txtidp.TabIndex = 6;
+            this.txtidp.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtidp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(255, 22);
-            this.textBox2.TabIndex = 7;
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Location = new System.Drawing.Point(139, 105);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(255, 22);
+            this.txtNombre.TabIndex = 7;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
-            // textBox3
+            // txtPrecio
             // 
-            this.textBox3.Location = new System.Drawing.Point(139, 147);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(89, 22);
-            this.textBox3.TabIndex = 8;
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Location = new System.Drawing.Point(139, 147);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(89, 22);
+            this.txtPrecio.TabIndex = 8;
+            this.txtPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrecio_KeyDown);
             // 
-            // textBox4
+            // Txtexist
             // 
-            this.textBox4.Location = new System.Drawing.Point(139, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(89, 22);
-            this.textBox4.TabIndex = 9;
+            this.Txtexist.Enabled = false;
+            this.Txtexist.Location = new System.Drawing.Point(139, 199);
+            this.Txtexist.Name = "Txtexist";
+            this.Txtexist.Size = new System.Drawing.Size(89, 22);
+            this.Txtexist.TabIndex = 9;
+            this.Txtexist.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtexist_KeyDown);
             // 
-            // comboBox1
+            // cboxestatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 253);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(55, 24);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.Visible = false;
+            this.cboxestatus.Enabled = false;
+            this.cboxestatus.FormattingEnabled = true;
+            this.cboxestatus.Items.AddRange(new object[] {
+            "--Seleccione--",
+            "0",
+            "1"});
+            this.cboxestatus.Location = new System.Drawing.Point(139, 253);
+            this.cboxestatus.Name = "cboxestatus";
+            this.cboxestatus.Size = new System.Drawing.Size(98, 24);
+            this.cboxestatus.TabIndex = 10;
+            this.cboxestatus.Visible = false;
+            this.cboxestatus.SelectedIndexChanged += new System.EventHandler(this.cboxestatus_SelectedIndexChanged);
             // 
-            // button1
+            // btnbuscar
             // 
-            this.button1.Location = new System.Drawing.Point(233, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 36);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnbuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnbuscar.BackgroundImage")));
+            this.btnbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnbuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.Image")));
+            this.btnbuscar.Location = new System.Drawing.Point(233, 53);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(94, 36);
+            this.btnbuscar.TabIndex = 11;
+            this.btnbuscar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnguardar
             // 
-            this.button2.Location = new System.Drawing.Point(139, 310);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 36);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Guardar ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnguardar.Enabled = false;
+            this.btnguardar.Location = new System.Drawing.Point(57, 321);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(94, 36);
+            this.btnguardar.TabIndex = 12;
+            this.btnguardar.Text = "Guardar ";
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // button3
+            // Btneliminar
             // 
-            this.button3.Location = new System.Drawing.Point(250, 310);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 36);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Btneliminar.Enabled = false;
+            this.Btneliminar.Location = new System.Drawing.Point(168, 321);
+            this.Btneliminar.Name = "Btneliminar";
+            this.Btneliminar.Size = new System.Drawing.Size(94, 36);
+            this.Btneliminar.TabIndex = 13;
+            this.Btneliminar.Text = "Eliminar";
+            this.Btneliminar.UseVisualStyleBackColor = true;
+            this.Btneliminar.Click += new System.EventHandler(this.Btneliminar_Click);
             // 
             // frm_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(141)))), ((int)(((byte)(198)))));
-            this.ClientSize = new System.Drawing.Size(815, 369);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(688, 369);
+            this.Controls.Add(this.Btneliminar);
+            this.Controls.Add(this.btnguardar);
+            this.Controls.Add(this.btnbuscar);
+            this.Controls.Add(this.cboxestatus);
+            this.Controls.Add(this.Txtexist);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtidp);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -230,13 +252,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtidp;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox Txtexist;
+        private System.Windows.Forms.ComboBox cboxestatus;
+        private System.Windows.Forms.Button btnbuscar;
+        private System.Windows.Forms.Button btnguardar;
+        private System.Windows.Forms.Button Btneliminar;
     }
 }

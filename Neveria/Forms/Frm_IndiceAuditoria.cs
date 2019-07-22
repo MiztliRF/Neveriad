@@ -19,8 +19,8 @@ namespace Neveria.Forms
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            Forms.Frm_Resempledo ad = new Frm_Resempledo();
-            ad.ShowDialog();
+           // Forms.Frm_Resempledo ad = new Frm_Resempledo();
+           // ad.ShowDialog();
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)

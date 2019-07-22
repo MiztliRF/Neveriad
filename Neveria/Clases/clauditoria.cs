@@ -17,12 +17,12 @@ namespace Neveria.Clases
             string user = "add";
             string usuario = Clases.clusuario.persona;
             Clconexion objconexion = new Clconexion();
-            SqlConnection cnn = new SqlConnection(objconexion.conn());
-            cnn.Open();
+            SqlConnection conexion = new SqlConnection(objconexion.conexion());
+            conexion.Open();
             string query = "insert into Auditoria values('"+usuario+"','"+DateTime.Now.ToString("MM/dd/yyyy/ HH:mm:ss")+"','"+au_actividad+"')";
-            SqlCommand cmd = new SqlCommand(query, cnn);
+            SqlCommand cmd = new SqlCommand(query, conexion);
             cmd.ExecuteNonQuery();
-            cnn.Close();
+            conexion.Close();
             
         
         

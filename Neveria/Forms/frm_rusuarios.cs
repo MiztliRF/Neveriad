@@ -36,11 +36,14 @@ namespace Neveria.Forms
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+           
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
+
             this.Close();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace Neveria.Forms
                 if (e.KeyCode == Keys.Enter)
                 {
 
-                    if (txtusuario.Text == "")
+                   if (txtusuario.Text == "")
                     {
                         MessageBox.Show("Error el usuario no puede  ir en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtusuario.Focus();
@@ -131,6 +134,7 @@ namespace Neveria.Forms
                                 txtusuario.Clear();
                                 txtusuario.Focus();
                             }
+                            Existe = 0;
                             
                         }
 
@@ -212,15 +216,11 @@ namespace Neveria.Forms
                             cbcamviarcontraseña.Visible = true;
 
                         }
-                        else
+                        else if (Existe==0)
                         {
-                            MessageBox.Show("Contraseña Incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                                txtusuario.Enabled = true;
-                              txtusuario.Clear();
-                                 txtusuario.Focus();
-                                 txtcontraseña.Clear();
-                                txtcontraseña.Enabled = false;
+                            txtcontraseña.Enabled = false;
+                            txtVcontraseña.Enabled = true;
+                            txtVcontraseña.Focus();
                         }
                         //conexion.Open();
                         //System.Data.SqlClient.SqlCommand comando = new SqlCommand("select US_NOMBRE,US_CONTRASEÑA from Usuarios where US_NOMBRE='" + txtusuario.Text + "' and US_CONTRASEÑA='" + txtcontraseña.Text + "'", conexion);
@@ -549,6 +549,11 @@ namespace Neveria.Forms
             cboxnivel.SelectedIndex = -1;
             cbcamviarcontraseña.Checked = false;
             cboxnivel.Enabled=false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -33,28 +33,22 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.btnagregar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.cbcolonia = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtemail = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtrfc = new System.Windows.Forms.TextBox();
+            this.txttelefono = new System.Windows.Forms.TextBox();
+            this.txtni = new System.Windows.Forms.TextBox();
+            this.txtne = new System.Windows.Forms.TextBox();
+            this.txtcalle = new System.Windows.Forms.TextBox();
+            this.txtnombre = new System.Windows.Forms.TextBox();
+            this.txtAm = new System.Windows.Forms.TextBox();
+            this.txtAp = new System.Windows.Forms.TextBox();
+            this.txtclave = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -106,28 +100,22 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(141)))), ((int)(((byte)(198)))));
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.btnagregar);
+            this.panel2.Controls.Add(this.btneliminar);
+            this.panel2.Controls.Add(this.btnBuscar);
+            this.panel2.Controls.Add(this.cbcolonia);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.txtemail);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox9);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtrfc);
+            this.panel2.Controls.Add(this.txttelefono);
+            this.panel2.Controls.Add(this.txtni);
+            this.panel2.Controls.Add(this.txtne);
+            this.panel2.Controls.Add(this.txtcalle);
+            this.panel2.Controls.Add(this.txtnombre);
+            this.panel2.Controls.Add(this.txtAm);
+            this.panel2.Controls.Add(this.txtAp);
+            this.panel2.Controls.Add(this.txtclave);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -140,114 +128,71 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 503);
+            this.panel2.Size = new System.Drawing.Size(1228, 780);
             this.panel2.TabIndex = 1;
             // 
-            // button4
+            // btnagregar
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(519, 397);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 58);
-            this.button4.TabIndex = 32;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnagregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnagregar.BackgroundImage")));
+            this.btnagregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnagregar.Enabled = false;
+            this.btnagregar.Location = new System.Drawing.Point(480, 384);
+            this.btnagregar.Name = "btnagregar";
+            this.btnagregar.Size = new System.Drawing.Size(119, 58);
+            this.btnagregar.TabIndex = 32;
+            this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
-            // button3
+            // btneliminar
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(659, 397);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 58);
-            this.button3.TabIndex = 31;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btneliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btneliminar.BackgroundImage")));
+            this.btneliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btneliminar.Enabled = false;
+            this.btneliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btneliminar.Location = new System.Drawing.Point(620, 384);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(95, 58);
+            this.btneliminar.TabIndex = 31;
+            this.btneliminar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(298, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 41);
-            this.button1.TabIndex = 29;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBuscar.Location = new System.Drawing.Point(298, 22);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(108, 41);
+            this.btnBuscar.TabIndex = 29;
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // cbcolonia
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(566, 326);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(188, 24);
-            this.comboBox4.TabIndex = 28;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(566, 281);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(188, 24);
-            this.comboBox3.TabIndex = 27;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(566, 234);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(188, 24);
-            this.comboBox2.TabIndex = 26;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(566, 174);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 24);
-            this.comboBox1.TabIndex = 25;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(496, 333);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 17);
-            this.label15.TabIndex = 24;
-            this.label15.Text = "Estatus";
+            this.cbcolonia.Enabled = false;
+            this.cbcolonia.FormattingEnabled = true;
+            this.cbcolonia.Location = new System.Drawing.Point(566, 177);
+            this.cbcolonia.Name = "cbcolonia";
+            this.cbcolonia.Size = new System.Drawing.Size(188, 24);
+            this.cbcolonia.TabIndex = 27;
+            this.cbcolonia.SelectedIndexChanged += new System.EventHandler(this.cbcolonia_SelectedIndexChanged);
+            this.cbcolonia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbcolonia_KeyDown);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(496, 288);
+            this.label14.Location = new System.Drawing.Point(496, 184);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 17);
             this.label14.TabIndex = 23;
             this.label14.Text = "Colonia";
             // 
-            // label13
+            // txtemail
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(482, 241);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 17);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Localidad";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(484, 181);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 17);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Municipio";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(566, 123);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(208, 22);
-            this.textBox10.TabIndex = 20;
+            this.txtemail.Enabled = false;
+            this.txtemail.Location = new System.Drawing.Point(566, 123);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(208, 22);
+            this.txtemail.TabIndex = 20;
+            this.txtemail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtemail_KeyDown);
             // 
             // label11
             // 
@@ -258,68 +203,86 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "E-mail";
             // 
-            // textBox9
+            // txtrfc
             // 
-            this.textBox9.Location = new System.Drawing.Point(566, 71);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(208, 22);
-            this.textBox9.TabIndex = 18;
+            this.txtrfc.Enabled = false;
+            this.txtrfc.Location = new System.Drawing.Point(566, 71);
+            this.txtrfc.Name = "txtrfc";
+            this.txtrfc.Size = new System.Drawing.Size(208, 22);
+            this.txtrfc.TabIndex = 18;
+            this.txtrfc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtrfc_KeyDown);
             // 
-            // textBox8
+            // txttelefono
             // 
-            this.textBox8.Location = new System.Drawing.Point(175, 346);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(208, 22);
-            this.textBox8.TabIndex = 17;
+            this.txttelefono.Enabled = false;
+            this.txttelefono.Location = new System.Drawing.Point(175, 346);
+            this.txttelefono.Name = "txttelefono";
+            this.txttelefono.Size = new System.Drawing.Size(208, 22);
+            this.txttelefono.TabIndex = 17;
+            this.txttelefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttelefono_KeyDown);
             // 
-            // textBox7
+            // txtni
             // 
-            this.textBox7.Location = new System.Drawing.Point(175, 305);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(90, 22);
-            this.textBox7.TabIndex = 16;
+            this.txtni.Enabled = false;
+            this.txtni.Location = new System.Drawing.Point(175, 305);
+            this.txtni.Name = "txtni";
+            this.txtni.Size = new System.Drawing.Size(90, 22);
+            this.txtni.TabIndex = 16;
+            this.txtni.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtni_KeyDown);
             // 
-            // textBox6
+            // txtne
             // 
-            this.textBox6.Location = new System.Drawing.Point(175, 261);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(90, 22);
-            this.textBox6.TabIndex = 15;
+            this.txtne.Enabled = false;
+            this.txtne.Location = new System.Drawing.Point(175, 261);
+            this.txtne.Name = "txtne";
+            this.txtne.Size = new System.Drawing.Size(90, 22);
+            this.txtne.TabIndex = 15;
+            this.txtne.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtne_KeyDown);
             // 
-            // textBox5
+            // txtcalle
             // 
-            this.textBox5.Location = new System.Drawing.Point(175, 217);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(208, 22);
-            this.textBox5.TabIndex = 14;
+            this.txtcalle.Enabled = false;
+            this.txtcalle.Location = new System.Drawing.Point(175, 217);
+            this.txtcalle.Name = "txtcalle";
+            this.txtcalle.Size = new System.Drawing.Size(208, 22);
+            this.txtcalle.TabIndex = 14;
+            this.txtcalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtcalle_KeyDown);
             // 
-            // textBox4
+            // txtnombre
             // 
-            this.textBox4.Location = new System.Drawing.Point(175, 176);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 22);
-            this.textBox4.TabIndex = 13;
+            this.txtnombre.Enabled = false;
+            this.txtnombre.Location = new System.Drawing.Point(175, 176);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(208, 22);
+            this.txtnombre.TabIndex = 13;
+            this.txtnombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnombre_KeyDown);
             // 
-            // textBox3
+            // txtAm
             // 
-            this.textBox3.Location = new System.Drawing.Point(175, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(208, 22);
-            this.textBox3.TabIndex = 12;
+            this.txtAm.Enabled = false;
+            this.txtAm.Location = new System.Drawing.Point(175, 125);
+            this.txtAm.Name = "txtAm";
+            this.txtAm.Size = new System.Drawing.Size(208, 22);
+            this.txtAm.TabIndex = 12;
+            this.txtAm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAm_KeyDown);
             // 
-            // textBox2
+            // txtAp
             // 
-            this.textBox2.Location = new System.Drawing.Point(175, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 22);
-            this.textBox2.TabIndex = 11;
+            this.txtAp.Enabled = false;
+            this.txtAp.Location = new System.Drawing.Point(175, 73);
+            this.txtAp.Name = "txtAp";
+            this.txtAp.Size = new System.Drawing.Size(208, 22);
+            this.txtAp.TabIndex = 11;
+            this.txtAp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAp_KeyDown);
             // 
-            // textBox1
+            // txtclave
             // 
-            this.textBox1.Location = new System.Drawing.Point(175, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 22);
-            this.textBox1.TabIndex = 10;
+            this.txtclave.Location = new System.Drawing.Point(175, 31);
+            this.txtclave.Name = "txtclave";
+            this.txtclave.Size = new System.Drawing.Size(108, 22);
+            this.txtclave.TabIndex = 10;
+            this.txtclave.TextChanged += new System.EventHandler(this.txtclave_TextChanged);
+            this.txtclave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtclave_KeyDown);
             // 
             // label10
             // 
@@ -440,28 +403,22 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnagregar;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ComboBox cbcolonia;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtrfc;
+        private System.Windows.Forms.TextBox txttelefono;
+        private System.Windows.Forms.TextBox txtni;
+        private System.Windows.Forms.TextBox txtne;
+        private System.Windows.Forms.TextBox txtcalle;
+        private System.Windows.Forms.TextBox txtnombre;
+        private System.Windows.Forms.TextBox txtAm;
+        private System.Windows.Forms.TextBox txtAp;
+        private System.Windows.Forms.TextBox txtclave;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
