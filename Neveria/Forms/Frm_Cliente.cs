@@ -141,6 +141,13 @@ namespace Neveria.Forms
                     txtAp.Enabled = false;
                 }
             }
+            if(e.KeyCode==Keys.Escape)
+            {
+                txtclave.Enabled = true;
+                txtclave.Focus();
+                txtAp.Clear();
+                txtAp.Enabled = false;
+            }
 
         }
 
@@ -163,6 +170,13 @@ namespace Neveria.Forms
                     txtAm.Enabled = false;
                 }
             }
+            if (e.KeyCode==Keys.Escape)
+            {
+                txtAp.Enabled = true;
+                txtAp.Focus();
+                txtAm.Clear();
+                txtAm.Enabled = false;
+            }
         }
 
         private void txtnombre_KeyDown(object sender, KeyEventArgs e)
@@ -184,6 +198,13 @@ namespace Neveria.Forms
                     txtnombre.Enabled = false;
                 }
             }
+            if (e.KeyCode==Keys.Escape)
+            {
+                txtAm.Enabled = true;
+                txtAm.Focus();
+                txtnombre.Clear();
+                txtnombre.Enabled = false;
+            }
         }
 
         private void txtcalle_KeyDown(object sender, KeyEventArgs e)
@@ -204,6 +225,13 @@ namespace Neveria.Forms
                     txtne.Focus();
                     txtcalle.Enabled = false;
                 }
+            }
+            if (e.KeyCode==Keys.Escape)
+            {
+                txtnombre.Enabled = true;
+                txtnombre.Focus();
+                txtcalle.Clear();
+                txtcalle.Enabled = false;
             }
         }
 
@@ -326,7 +354,7 @@ namespace Neveria.Forms
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
-            if (cbcolonia.Text=="")
+            if (cbcolonia.Text == "")
             {
                 MessageBox.Show("Error, No selecciono ninguna Colonia para el nuevo usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -334,23 +362,103 @@ namespace Neveria.Forms
             {
                 DialogResult result = MessageBox.Show("¿Seguro Usted esta Seguro de Hacer esta accion?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
-                { 
+                {
                     comando.CommandType = CommandType.StoredProcedure;
-                    comando.CommandText = "SP_Usuarios";
+                    comando.CommandText = "SP_Cliente";
                     comando.Parameters.Clear();
                     comando.Parameters.AddWithValue("@OP", 2);
-                    comando.Parameters.AddWithValue("@Nombre", txtusuario.Text);
-                    comando.Parameters.AddWithValue("@Contraseña", txtcontraseña.Text);
-                    comando.Parameters.AddWithValue("@Nivel", cboxnivel.Text);
+                    comando.Parameters.AddWithValue("@Cli_Id", int.Parse(txtclave.Text));
+                    comando.Parameters.AddWithValue("@Cli_Ap", txtAp.Text);
+                    comando.Parameters.AddWithValue("@Cli_Am", txtAm.Text);
+                    comando.Parameters.AddWithValue("@Cli_Nombre", txtnombre.Text);
+                    comando.Parameters.AddWithValue("@Cli_Calle", txtcalle.Text);
+                    comando.Parameters.AddWithValue("@Cli_Ne", int.Parse(txtne.Text));
+                    comando.Parameters.AddWithValue("@Cli_Ni", int.Parse(txtni.Text));
+                    comando.Parameters.AddWithValue("@Cli_Telefono", txttelefono.Text);
+                    comando.Parameters.AddWithValue("@Cli_Email", txtemail.Text);
+                    comando.Parameters.AddWithValue("@Cli_RFC", txtrfc.Text);
+                    comando.Parameters.AddWithValue("@Cli_Colonia", cbcolonia.SelectedValue);
+                    comando.Parameters.AddWithValue("@Cli_Estatus",1);
                     comando.Connection = conexion;
                     conexion.Open();
                     comando.ExecuteNonQuery();
                     conexion.Close();
                     MessageBox.Show("Se agregado los cambios,correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clases.clusuario.persona = txtusuario.Text;
-                    Clases.clauditoria.auditoria("El " + Clases.clusuario.usuario + " Agrego un nuevo  Usuario " + txtusuario.Text + " con el nivel" + cboxnivel.Text);
+                    Clases.clauditoria.auditoria("Realizo un cambio en el catalgo de cliente con el ID " +txtclave+" Con el Nombre "+ txtnombre);
                     cleartotal();
                 }
+            }
+
+        }
+
+        public void cleartotal()
+        {
+            txtAp.Clear();
+            txtAp.Enabled = false;
+            txtAm.Clear();
+            txtAm.Enabled = false;
+            txtnombre.Enabled = false;
+            txtnombre.Clear();
+            txtcalle.Enabled = false;
+            txtcalle.Clear();
+            txtne.Enabled = false;
+            txtni.Clear();
+            txtne.Clear();
+            txtni.Enabled = false;
+            txttelefono.Enabled = false;
+            txttelefono.Clear();
+            txtemail.Enabled = false;
+            txtemail.Clear();
+            txtrfc.Enabled = false;
+            txtrfc.Clear();
+            cbcolonia.Enabled = false;
+            cbcolonia.SelectedIndex = -1;
+            btnagregar.Enabled = false;
+            txtclave.Clear();
+            txtclave.Enabled = true;
+            txtclave.Focus();
+
+
+        }
+        public void rellenar()
+        {
+            DataTable dt = new DataTable();
+            conexion.Open();
+            SqlCommand combo = new SqlCommand("select * from Colonia", conexion);
+            SqlDataAdapter da = new SqlDataAdapter(combo);
+            da.Fill(dt);
+            conexion.Close();
+            this.cbcolonia.DataSource = dt;
+            this.cbcolonia.ValueMember = "CO_ID";
+            this.cbcolonia.DisplayMember = "CO_NOMBRE";
+            conexion.Close();
+        }
+        private void Frm_Cliente_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dATASETCOLONIA.Colonia' Puede moverla o quitarla según sea necesario.
+            // this.coloniaTableAdapter1.Fill(this.dATASETCOLONIA.Colonia);
+            // TODO: esta línea de código carga datos en la tabla 'nEVERIACcolonia.Colonia' Puede moverla o quitarla según sea necesario.
+            //this.coloniaTableAdapter.Fill(this.nEVERIACcolonia.Colonia);
+            rellenar();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cargaconsecutivo()
+        {
+            Clases.Clconexion objconexion = new Clases.Clconexion();
+            conexion = new SqlConnection(objconexion.conexion());
+            conexion.Open();
+            string query = "select  max(CLI_CLAVE)+1 as consecutivo from Cliente";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            lector = cmd.ExecuteReader();
+            if (lector.Read())
+            {
+                txtclave.Text = lector["consecutivo"].ToString();
+            }
         }
     }
 }

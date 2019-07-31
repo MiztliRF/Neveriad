@@ -16,14 +16,14 @@ namespace Neveria.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class RPT_Auditoria : ReportClass {
+    public class informeventatodos : ReportClass {
         
-        public RPT_Auditoria() {
+        public informeventatodos() {
         }
         
         public override string ResourceName {
             get {
-                return "RPT_Auditoria.rpt";
+                return "informeventatodos.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Neveria.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Neveria.Reporte.RPT_Auditoria.rpt";
+                return "Neveria.Reporte.informeventatodos.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,28 @@ namespace Neveria.Reporte {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_FechaIni {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_FechaFin {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRPT_Auditoria : Component, ICachedReport {
+    public class Cachedinformeventatodos : Component, ICachedReport {
         
-        public CachedRPT_Auditoria() {
+        public Cachedinformeventatodos() {
         }
         
         [Browsable(false)]
@@ -129,7 +145,7 @@ namespace Neveria.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            RPT_Auditoria rpt = new RPT_Auditoria();
+            informeventatodos rpt = new informeventatodos();
             rpt.Site = this.Site;
             return rpt;
         }

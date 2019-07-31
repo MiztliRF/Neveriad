@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Neveria.Reporte {
+namespace RestaurantCasaDeLia.Informes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace Neveria.Reporte {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class reporteVenta2 : ReportClass {
+    public class crpinfoventaplatillos : ReportClass {
         
-        public reporteVenta2() {
+        public crpinfoventaplatillos() {
         }
         
         public override string ResourceName {
             get {
-                return "reporteVenta2.rpt";
+                return "crpinfoventaplatillos.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Neveria.Reporte {
         
         public override string FullResourceName {
             get {
-                return "Neveria.Reporte.reporteVenta2.rpt";
+                return "RestaurantCasaDeLia.Informes.crpinfoventaplatillos.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,33 @@ namespace Neveria.Reporte {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Folio {
+        public CrystalDecisions.Shared.IParameterField Parameter_FechaIni {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_FechaFin {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_platillo {
+            get {
+                return this.DataDefinition.ParameterFields[2];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedreporteVenta2 : Component, ICachedReport {
+    public class Cachedcrpinfoventaplatillos : Component, ICachedReport {
         
-        public CachedreporteVenta2() {
+        public Cachedcrpinfoventaplatillos() {
         }
         
         [Browsable(false)]
@@ -137,7 +153,7 @@ namespace Neveria.Reporte {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            reporteVenta2 rpt = new reporteVenta2();
+            crpinfoventaplatillos rpt = new crpinfoventaplatillos();
             rpt.Site = this.Site;
             return rpt;
         }

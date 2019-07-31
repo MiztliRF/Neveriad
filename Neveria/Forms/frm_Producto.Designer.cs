@@ -36,15 +36,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtidp = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.Txtexist = new System.Windows.Forms.TextBox();
-            this.cboxestatus = new System.Windows.Forms.ComboBox();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.Btneliminar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboxestatus = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.SuspendLayout();
@@ -117,16 +118,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Existencia:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 260);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Estatus:";
-            this.label6.Visible = false;
-            // 
             // txtidp
             // 
             this.txtidp.Location = new System.Drawing.Point(139, 63);
@@ -163,21 +154,6 @@
             this.Txtexist.TabIndex = 9;
             this.Txtexist.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtexist_KeyDown);
             // 
-            // cboxestatus
-            // 
-            this.cboxestatus.Enabled = false;
-            this.cboxestatus.FormattingEnabled = true;
-            this.cboxestatus.Items.AddRange(new object[] {
-            "--Seleccione--",
-            "0",
-            "1"});
-            this.cboxestatus.Location = new System.Drawing.Point(139, 253);
-            this.cboxestatus.Name = "cboxestatus";
-            this.cboxestatus.Size = new System.Drawing.Size(98, 24);
-            this.cboxestatus.TabIndex = 10;
-            this.cboxestatus.Visible = false;
-            this.cboxestatus.SelectedIndexChanged += new System.EventHandler(this.cboxestatus_SelectedIndexChanged);
-            // 
             // btnbuscar
             // 
             this.btnbuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnbuscar.BackgroundImage")));
@@ -188,6 +164,7 @@
             this.btnbuscar.Size = new System.Drawing.Size(94, 36);
             this.btnbuscar.TabIndex = 11;
             this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // btnguardar
             // 
@@ -211,12 +188,49 @@
             this.Btneliminar.UseVisualStyleBackColor = true;
             this.Btneliminar.Click += new System.EventHandler(this.Btneliminar_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(343, 56);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(286, 24);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 260);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Estatus:";
+            this.label6.Visible = false;
+            // 
+            // cboxestatus
+            // 
+            this.cboxestatus.Enabled = false;
+            this.cboxestatus.FormattingEnabled = true;
+            this.cboxestatus.Items.AddRange(new object[] {
+            "--Seleccione--",
+            "0",
+            "1"});
+            this.cboxestatus.Location = new System.Drawing.Point(139, 253);
+            this.cboxestatus.Name = "cboxestatus";
+            this.cboxestatus.Size = new System.Drawing.Size(98, 24);
+            this.cboxestatus.TabIndex = 10;
+            this.cboxestatus.Text = "1";
+            this.cboxestatus.Visible = false;
+            this.cboxestatus.SelectedIndexChanged += new System.EventHandler(this.cboxestatus_SelectedIndexChanged);
+            // 
             // frm_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(141)))), ((int)(((byte)(198)))));
             this.ClientSize = new System.Drawing.Size(688, 369);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Btneliminar);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.btnbuscar);
@@ -234,6 +248,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Producto";
             this.Text = "frm_Producto";
+            this.Load += new System.EventHandler(this.frm_Producto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
@@ -251,14 +266,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtidp;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox Txtexist;
-        private System.Windows.Forms.ComboBox cboxestatus;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button Btneliminar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboxestatus;
     }
 }

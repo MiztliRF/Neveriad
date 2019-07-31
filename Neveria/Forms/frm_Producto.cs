@@ -17,6 +17,7 @@ namespace Neveria.Forms
         System.Data.SqlClient.SqlCommand comando = new System.Data.SqlClient.SqlCommand();
         System.Data.SqlClient.SqlDataReader lector;
         int Existe;
+        string valor;
         public frm_Producto()
         {
             InitializeComponent();
@@ -127,8 +128,9 @@ namespace Neveria.Forms
                 else
                 {
                     Txtexist.Enabled = false;
-                    cboxestatus.Enabled = true;
-                    cboxestatus.Focus();
+                    btnguardar.Enabled = true;
+                    btnguardar.Focus();
+
                 }
             }
         }
@@ -191,8 +193,7 @@ namespace Neveria.Forms
                 comando.Parameters.AddWithValue("@Pr_Nombre", txtNombre.Text);
                 comando.Parameters.AddWithValue("@Pr_Precio ", txtPrecio.Text);
                 comando.Parameters.AddWithValue("@Pr_Existencia ", Txtexist.Text);
-                comando.Parameters.AddWithValue("@Pr_Estatus", cboxestatus.Text);
-                cboxestatus.Text = "0";
+                comando.Parameters.AddWithValue("@Pr_Estatus", "1");
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.ExecuteNonQuery();
@@ -263,6 +264,44 @@ namespace Neveria.Forms
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            comboBox1.Visible = true;
+            //Frm_Producto_B frm = new Frm_Producto_B();
+            //frm.Show();
+        }
+        public void rellenar()
+        {
+            DataTable dt = new DataTable();
+            conexion.Open();
+            SqlCommand combo = new SqlCommand("select * from Producto", conexion);
+            SqlDataAdapter da = new SqlDataAdapter(combo);
+            da.Fill(dt);
+            conexion.Close();
+            this.comboBox1.DataSource = dt;
+            this.comboBox1.ValueMember = "PR_ID";
+            this.comboBox1.DisplayMember = "PR_NOMBRE";
+            conexion.Close();
+        }
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void frm_Producto_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                txtidp.Text = comboBox1.SelectedValue.ToString();
+            }
         }
     }
 }

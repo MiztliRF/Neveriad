@@ -49,7 +49,16 @@
               <Mapping SourceColumn="VD_CANTIDAD" DataSetColumn="VD_CANTIDAD" />
               <Mapping SourceColumn="VD_PRECIO" DataSetColumn="VD_PRECIO" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="NEVERIACconexion (Settings)" DbObjectName="NEVERIAC.dbo.Venta_Detalle" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT VD_CLAVEP, VD_CANTIDAD, VD_PRECIO FROM dbo.Venta_Detalle</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -59,7 +68,7 @@
   <xs:element name="NEVERIACDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NEVERIACDataSet1" msprop:Generator_UserDSName="NEVERIACDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Producto" msprop:Generator_TableClassName="ProductoDataTable" msprop:Generator_TableVarName="tableProducto" msprop:Generator_TablePropName="Producto" msprop:Generator_RowDeletingName="ProductoRowDeleting" msprop:Generator_RowChangingName="ProductoRowChanging" msprop:Generator_RowEvHandlerName="ProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductoRowDeleted" msprop:Generator_UserTableName="Producto" msprop:Generator_RowChangedName="ProductoRowChanged" msprop:Generator_RowEvArgName="ProductoRowChangeEvent" msprop:Generator_RowClassName="ProductoRow">
+        <xs:element name="Producto" msprop:Generator_TableClassName="ProductoDataTable" msprop:Generator_TableVarName="tableProducto" msprop:Generator_RowChangedName="ProductoRowChanged" msprop:Generator_TablePropName="Producto" msprop:Generator_RowDeletingName="ProductoRowDeleting" msprop:Generator_RowChangingName="ProductoRowChanging" msprop:Generator_RowEvHandlerName="ProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductoRowDeleted" msprop:Generator_RowClassName="ProductoRow" msprop:Generator_UserTableName="Producto" msprop:Generator_RowEvArgName="ProductoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PR_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnPR_NOMBRE" msprop:Generator_ColumnPropNameInRow="PR_NOMBRE" msprop:Generator_ColumnPropNameInTable="PR_NOMBREColumn" msprop:Generator_UserColumnName="PR_NOMBRE" minOccurs="0">
@@ -72,7 +81,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Venta_Detalle" msprop:Generator_TableClassName="Venta_DetalleDataTable" msprop:Generator_TableVarName="tableVenta_Detalle" msprop:Generator_TablePropName="Venta_Detalle" msprop:Generator_RowDeletingName="Venta_DetalleRowDeleting" msprop:Generator_RowChangingName="Venta_DetalleRowChanging" msprop:Generator_RowEvHandlerName="Venta_DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="Venta_DetalleRowDeleted" msprop:Generator_UserTableName="Venta_Detalle" msprop:Generator_RowChangedName="Venta_DetalleRowChanged" msprop:Generator_RowEvArgName="Venta_DetalleRowChangeEvent" msprop:Generator_RowClassName="Venta_DetalleRow">
+        <xs:element name="Venta_Detalle" msprop:Generator_TableClassName="Venta_DetalleDataTable" msprop:Generator_TableVarName="tableVenta_Detalle" msprop:Generator_RowChangedName="Venta_DetalleRowChanged" msprop:Generator_TablePropName="Venta_Detalle" msprop:Generator_RowDeletingName="Venta_DetalleRowDeleting" msprop:Generator_RowChangingName="Venta_DetalleRowChanging" msprop:Generator_RowEvHandlerName="Venta_DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="Venta_DetalleRowDeleted" msprop:Generator_RowClassName="Venta_DetalleRow" msprop:Generator_UserTableName="Venta_Detalle" msprop:Generator_RowEvArgName="Venta_DetalleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VD_CLAVEP" msprop:Generator_ColumnVarNameInTable="columnVD_CLAVEP" msprop:Generator_ColumnPropNameInRow="VD_CLAVEP" msprop:Generator_ColumnPropNameInTable="VD_CLAVEPColumn" msprop:Generator_UserColumnName="VD_CLAVEP" type="xs:short" minOccurs="0" />

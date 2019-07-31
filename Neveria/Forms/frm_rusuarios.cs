@@ -458,11 +458,6 @@ namespace Neveria.Forms
                         cboxnivel.Focus();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Error, No selecciono ningun Nivel para el nuevo usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
             }
 
         }

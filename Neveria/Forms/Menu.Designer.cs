@@ -56,9 +56,10 @@
             this.informacionDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionDelAutorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionDelSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelcontenedor = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.informeDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paneltop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -156,6 +157,7 @@
             this.button3.TabIndex = 0;
             this.button3.Text = "REPORTES";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
@@ -270,7 +272,8 @@
             this.auditoriaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarUsuarioToolStripMenuItem,
             this.depuracionDeMovimientosToolStripMenuItem,
-            this.informesDeAuditoriaToolStripMenuItem});
+            this.informesDeAuditoriaToolStripMenuItem,
+            this.informeDeVentaToolStripMenuItem});
             this.auditoriaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("auditoriaToolStripMenuItem.Image")));
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
             this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
@@ -288,12 +291,14 @@
             this.depuracionDeMovimientosToolStripMenuItem.Name = "depuracionDeMovimientosToolStripMenuItem";
             this.depuracionDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
             this.depuracionDeMovimientosToolStripMenuItem.Text = "Depuracion de Movimientos";
+            this.depuracionDeMovimientosToolStripMenuItem.Click += new System.EventHandler(this.depuracionDeMovimientosToolStripMenuItem_Click);
             // 
             // informesDeAuditoriaToolStripMenuItem
             // 
             this.informesDeAuditoriaToolStripMenuItem.Name = "informesDeAuditoriaToolStripMenuItem";
             this.informesDeAuditoriaToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
             this.informesDeAuditoriaToolStripMenuItem.Text = "Informes de Auditoria";
+            this.informesDeAuditoriaToolStripMenuItem.Click += new System.EventHandler(this.informesDeAuditoriaToolStripMenuItem_Click);
             // 
             // utileriaToolStripMenuItem
             // 
@@ -307,8 +312,9 @@
             // respaldoToolStripMenuItem
             // 
             this.respaldoToolStripMenuItem.Name = "respaldoToolStripMenuItem";
-            this.respaldoToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.respaldoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.respaldoToolStripMenuItem.Text = "Respaldo";
+            this.respaldoToolStripMenuItem.Click += new System.EventHandler(this.respaldoToolStripMenuItem_Click);
             // 
             // informacionDelSistemaToolStripMenuItem
             // 
@@ -332,18 +338,6 @@
             this.informacionDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(247, 26);
             this.informacionDelSistemaToolStripMenuItem1.Text = "Informacion Del Sistema";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(275, 207);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -356,6 +350,25 @@
             this.panelcontenedor.Name = "panelcontenedor";
             this.panelcontenedor.Size = new System.Drawing.Size(1288, 799);
             this.panelcontenedor.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(275, 207);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // informeDeVentaToolStripMenuItem
+            // 
+            this.informeDeVentaToolStripMenuItem.Name = "informeDeVentaToolStripMenuItem";
+            this.informeDeVentaToolStripMenuItem.Size = new System.Drawing.Size(272, 26);
+            this.informeDeVentaToolStripMenuItem.Text = "Informe de Venta";
+            this.informeDeVentaToolStripMenuItem.Click += new System.EventHandler(this.informeDeVentaToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -420,5 +433,6 @@
         public System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.Panel panelcontenedor2;
         private System.Windows.Forms.Panel panelcontenedor;
+        private System.Windows.Forms.ToolStripMenuItem informeDeVentaToolStripMenuItem;
     }
 }

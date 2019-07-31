@@ -16,5 +16,16 @@ namespace Neveria.Forms
         {
             InitializeComponent();
         }
+
+        private void Frm_BusquedadeA_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void txtproducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

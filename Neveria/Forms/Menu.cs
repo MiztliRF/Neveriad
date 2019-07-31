@@ -35,7 +35,7 @@ namespace Neveria.Forms
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnmaximizar_Click(object sender, EventArgs e)
@@ -233,6 +233,31 @@ namespace Neveria.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             abrirformhija(new Frm_Venta());
+        }
+
+        private void depuracionDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new Frm_AufitoriaUsuario());
+        }
+
+        private void respaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new frmrespaldo());
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            abrirformhija(new frminfoventa());
+        }
+
+        private void informesDeAuditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void informeDeVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirformhija(new frminfoventa());
         }
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Neveria.Forms
 {
-    public partial class frmIndiceCatalogos : Form
+    public partial class Frm_auditoriadeusriosfechas : Form
     {
-        public frmIndiceCatalogos()
+        public Frm_auditoriadeusriosfechas()
         {
             InitializeComponent();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

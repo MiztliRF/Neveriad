@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cbcolonia = new System.Windows.Forms.ComboBox();
+            this.coloniaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dATASETCOLONIA = new Neveria.DATASETCOLONIA();
             this.label14 = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,9 +62,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.nEVERIACcolonia = new Neveria.NEVERIACcolonia();
+            this.coloniaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.coloniaTableAdapter = new Neveria.NEVERIACcoloniaTableAdapters.ColoniaTableAdapter();
+            this.coloniaTableAdapter1 = new Neveria.DATASETCOLONIATableAdapters.ColoniaTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.coloniaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATASETCOLONIA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nEVERIACcolonia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coloniaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,7 +139,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1228, 780);
+            this.panel2.Size = new System.Drawing.Size(1472, 780);
             this.panel2.TabIndex = 1;
             // 
             // btnagregar
@@ -151,7 +162,7 @@
             this.btneliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btneliminar.Location = new System.Drawing.Point(620, 384);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(95, 58);
+            this.btneliminar.Size = new System.Drawing.Size(134, 58);
             this.btneliminar.TabIndex = 31;
             this.btneliminar.UseVisualStyleBackColor = true;
             // 
@@ -164,17 +175,29 @@
             this.btnBuscar.Size = new System.Drawing.Size(108, 41);
             this.btnBuscar.TabIndex = 29;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cbcolonia
             // 
+            this.cbcolonia.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.coloniaBindingSource1, "CO_ID", true));
             this.cbcolonia.Enabled = false;
             this.cbcolonia.FormattingEnabled = true;
-            this.cbcolonia.Location = new System.Drawing.Point(566, 177);
+            this.cbcolonia.Location = new System.Drawing.Point(566, 174);
             this.cbcolonia.Name = "cbcolonia";
-            this.cbcolonia.Size = new System.Drawing.Size(188, 24);
+            this.cbcolonia.Size = new System.Drawing.Size(223, 24);
             this.cbcolonia.TabIndex = 27;
             this.cbcolonia.SelectedIndexChanged += new System.EventHandler(this.cbcolonia_SelectedIndexChanged);
             this.cbcolonia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbcolonia_KeyDown);
+            // 
+            // coloniaBindingSource1
+            // 
+            this.coloniaBindingSource1.DataMember = "Colonia";
+            this.coloniaBindingSource1.DataSource = this.dATASETCOLONIA;
+            // 
+            // dATASETCOLONIA
+            // 
+            this.dATASETCOLONIA.DataSetName = "DATASETCOLONIA";
+            this.dATASETCOLONIA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label14
             // 
@@ -374,6 +397,24 @@
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 0;
             // 
+            // nEVERIACcolonia
+            // 
+            this.nEVERIACcolonia.DataSetName = "NEVERIACcolonia";
+            this.nEVERIACcolonia.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // coloniaBindingSource
+            // 
+            this.coloniaBindingSource.DataMember = "Colonia";
+            this.coloniaBindingSource.DataSource = this.nEVERIACcolonia;
+            // 
+            // coloniaTableAdapter
+            // 
+            this.coloniaTableAdapter.ClearBeforeFill = true;
+            // 
+            // coloniaTableAdapter1
+            // 
+            this.coloniaTableAdapter1.ClearBeforeFill = true;
+            // 
             // Frm_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -385,11 +426,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Cliente";
             this.Text = "Cliente";
+            this.Load += new System.EventHandler(this.Frm_Cliente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.coloniaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dATASETCOLONIA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nEVERIACcolonia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coloniaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,7 +452,6 @@
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.ComboBox cbcolonia;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label11;
@@ -426,5 +471,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label16;
+        private NEVERIACcolonia nEVERIACcolonia;
+        private System.Windows.Forms.BindingSource coloniaBindingSource;
+        private NEVERIACcoloniaTableAdapters.ColoniaTableAdapter coloniaTableAdapter;
+        private System.Windows.Forms.ComboBox cbcolonia;
+        private DATASETCOLONIA dATASETCOLONIA;
+        private System.Windows.Forms.BindingSource coloniaBindingSource1;
+        private DATASETCOLONIATableAdapters.ColoniaTableAdapter coloniaTableAdapter1;
     }
 }
